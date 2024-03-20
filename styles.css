@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+body {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  width: 85%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container h2 {
+  font-size: 20px;
+  font-weight: 30px;
+  /* background-image: url(3.jpg); */
+}
+
+form {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  padding: 6px;
+}
+
+input {
+  width: 150px;
+  padding: 7px;
+  border: none;
+  color: black;
+  background-color: white;
+}
+.icon {
+  width: 25px;
+  height: 25px;
+  color: black;
+}
+svg {
+  width: 25px;
+  height: 25px;
+  color: black;
+  padding: -10px;
+  border-radius: 100%;
+  background-color: black;
+}
+
+.info {
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.current {
+  width: 40%;
+  display: block;
+  padding: 20px;
+  background-color: rgb(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow:  1px 1px 3px;
+}
+.descr {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+  /* width: 150px; */
+  /* height: 150px; */
+  /* margin-left: -20px; */
+  /* margin-bottom: 15px; */
+#iconImg {
+  width: 100px;
+  height: 150px;
+  object-position: cover;
+  object-fit: cover;
+  margin-top: -35px;
+}
+.location {
+  width: 40%;
+  margin:0px auto;
+  text-align: center;
+  margin-top: -30px;
+}
+#description {
+  font-size: 14px;
+  position: absolute;
+  left: 50px;
+  top: 30px;
+  width: fit-content;
+}
+#temp {
+  margin-top: 20px;
+}
+.date {
+  width: 50%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.wind{
+  width: 90%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#windSpeed {
+  width: 40%;
+  background-color: rgb(3, 13, 146);
+  padding: 6px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    display: block;
+}
+#windSpeed i {
+  font-size: 12px;
+}
+#humidity {
+  width: 40%;
+  background-color: rgb(7, 211, 68);
+  padding: 6px;
+  border-radius: 7px;
+  display: block;
+}
+.sun {
+  width: 90%;
+  margin: 25px auto;
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#clear{
+  width: fit-content;
+  margin: auto;
+}
