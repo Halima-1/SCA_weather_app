@@ -197,13 +197,14 @@ svg {
 }
 
 footer div{
-  width: 100%;
+  width: fit-content;
   padding: 30px;
   display: block;
+  margin:auto;
 }
 .contactD{
   display: flex;
-  width: 60%;
+  width: fit-content;
   flex-direction: row;
   justify-content: space-between;
   margin: 20px auto;
