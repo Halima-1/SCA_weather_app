@@ -32,16 +32,16 @@ function weather() {
         // display.classList.contains("show");
         display.classList.remove("hide");
         display.classList.add("show");
-        notification.innerHTML = "<i style='color: green;'> success! <i/>";
+        notification.innerHTML = "";
       } else if (input && code == 404) {
         display.classList.remove("show");
         display.classList.add("hide");
-        notification.innerHTML = `<i style='color: red;'>City ${input} is not found<i/>`;
+        notification.innerHTML = `<code style='color: red;'>City ${input} is not found<code/>`;
       } else {
         display.classList.remove("show");
         display.classList.add("hide");
         notification.innerHTML =
-          "<i style='color: red;'>please input a city, connect to the internet and try again!<i/>";
+          "<code style='color: red;'>please input a city, connect to the internet and try again!<code/>";
       }
 
       let info = response.main;
