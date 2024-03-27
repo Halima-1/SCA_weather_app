@@ -121,7 +121,7 @@ function clearr() {
 // random background image
 let body = document.body;
 let random = Math.floor(Math.random() * 12);
-imgSrc = random + ".jpg";
+imgSrc =`./image/${random}.jpg`;
 body.style.backgroundImage = `url(${imgSrc})`;
 
 // function displayApp(){
