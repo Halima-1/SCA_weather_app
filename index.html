@@ -7,8 +7,20 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main id="cont">
-      <div class="container">
+    <main>
+      <!-- <div id="log" class="show">
+
+        <p>kindly input your name and title below to proceed to the weather app</p>
+        <form action="">
+          <p id="submitResponse"></p>
+          <input id="title" type="text" placeholder="enter your title" required/>
+          <input id="fname" type="text" placeholder="enter your firstname" required /> <br>
+
+        <button id="btn" onclick="displayApp()">Proceed</button>
+        </form>
+      </div> -->
+
+      <div id="displayAll" class="container">
         <h2>Weather application</h2>
         <form action="">
           <input type="text" placeholder="enter a location" id="input" />
@@ -37,6 +49,10 @@
 
       <div class="hide" id="info">
         <!-- current weather forecast -->
+        <div class="not-found hide">
+          <img src="./image/error-404.jpg" alt="">
+          <p>Oops! location not found!</p>
+        </div>
         <div class="show" id="current">
           <div class="descr">
             <div class="locationIcon">
@@ -50,10 +66,10 @@
           <div class="location">
             <p><b id="city"></b></p>
           </div>
-          <div class="date">
+          <!-- <div class="date">
             <i id="date"></i>
             <i id="time"></i>
-          </div>
+          </div> -->
           <div class="wind">
             <div id="windSpeed">
               <p>Wind speed</p>
@@ -147,19 +163,22 @@
     <footer>
       <div>
         <p>Contact us:</p>
-<a href="mailto:"></a>
+        <a href="mailto:"></a>
         <div class="contactD">
           <a href="mailto:dahunsiolajumoke18@gmail.com">
             <img class="contact" src="./image/download.png" alt="email" />
           </a>
-          <a href=""> <img class="contact" src="./image/instGRAM.png" alt="instagram" /> 
-          </a>
           <a href="">
+            <img class="contact" src="./image/instGRAM.png" alt="instagram" />
+          </a>
+          <a href="https://mobile.twitter.com/Ajumoke4">
             <img class="contact" src="./image/twitter.jpg" alt="X" />
           </a>
-          <a href=""> <img class="contact" src="./image/linked.jpg" alt="Linkedln" /> 
+          <a href="https://www.linkedin.com/in/dahunsi-halima-olajumoke-">
+            <img class="contact" src="./image/linked.jpg" alt="Linkedln" />
           </a>
-          <a href="tel:+2348105154901"> <img class="contact" src="./image/whatsapp.png" alt="whatsapp" /> 
+          <a href="tel:+2348105154901">
+            <img class="contact" src="./image/whatsapp.png" alt="whatsapp" />
           </a>
         </div>
       </div>
