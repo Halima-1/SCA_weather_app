@@ -15,6 +15,7 @@ function weather() {
   let display = document.getElementById("info");
   let pageError = document.querySelector(".not-found");
   let currentWeather = document.getElementById("current");
+  let erase = document.getElementById('erase');
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=1369021a9ab99c5a39d4f59fef56c43d&units=metric`
   )
@@ -37,6 +38,9 @@ function weather() {
         currentWeather.classList.remove("hide");
         currentWeather.classList.add("show");
         notification.innerHTML = "";
+        erase.innerHTML = `<svg style="color:grey;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+</svg>`;
       } else if (code == 404) {
         display.classList.remove("hide");
         display.classList.add("show");
@@ -44,6 +48,9 @@ function weather() {
         currentWeather.classList.add("hide");
         pageError.classList.remove("hide");
         pageError.classList.add("show");
+        erase.innerHTML = `<svg style="color:grey;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+</svg>`;
         notification.innerHTML = `<code style='color: red;'>City ${input} is not found <code/>`;
       } else {
         display.classList.remove("show");
@@ -89,6 +96,28 @@ function weather() {
       //  wind speed
       let speedd = response.wind.speed;
       windSpeed.innerHTML = speedd + "m/s";
+
+      // location time
+      let timezoneSeconds = response.timezone;
+      let timezoneMilliseconds = timezoneSeconds * 1000;
+            let isDST = response.timezone > response.timezone_offset;
+            // new Date().getTimezoneOffset()<(timezoneSeconds / 60);
+
+            // consIdering DST
+      const currentTimeUTC = new Date();
+      // const localTime = new Date(
+        // currentTimeUTC.getTime() + timezoneMilliseconds + (isDST ? 360000;
+        let localTime;
+        if(isDST){
+        localTime = new Date( currentTimeUTC.getTime() + timezoneMilliseconds + 3600000);
+        } else{
+        localTime = new Date(
+          currentTimeUTC.getTime() + timezoneMilliseconds - 3600000)
+        };
+      locationTime.innerHTML = localTime.toLocaleTimeString();
+      locationDate.innerHTML = localTime.toLocaleDateString();
+      console.log(isDST);
+      
       // let time = output.timezone;
       // // var zone = new Date(time);
       // // currentTime.innerHTML = zone.toLocaleTimeString();
@@ -100,13 +129,17 @@ function weather() {
 
     // error message
     .catch((err) => {
-      console.log(err.message);     
+      console.log(err.message);
     });
-
-  
 }
+function erase(){
+    let input = document.getElementById("input");
+    var clrInput = input.value.slice(-1, 0);
+      input.value = clrInput;
 
+}
 function clearr() {
+
   let clear = document.getElementById("info");
   let clearBtn = document.getElementById("clearBtn");
   if (clear.classList.contains("show")) {
@@ -121,7 +154,7 @@ function clearr() {
 // random background image
 let body = document.body;
 let random = Math.floor(Math.random() * 12);
-imgSrc =`./image/${random}.jpg`;
+imgSrc = `./image/${random}.jpg`;
 body.style.backgroundImage = `url(${imgSrc})`;
 
 // function displayApp(){
